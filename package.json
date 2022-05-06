@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-generator": "^4.16.1"
+  },
+  "name": "targetchallenge",
+  "description": "A RESTful service that can retrieve product and price details by ID.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connorjamesoverton/TargetChallenge.git"
+  },
+  "author": "Connor Overton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/connorjamesoverton/TargetChallenge/issues"
+  },
+  "homepage": "https://github.com/connorjamesoverton/TargetChallenge#readme"
+}
