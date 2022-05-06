@@ -10,8 +10,13 @@ dotenv.config();
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.m0zwf.gcp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true});
+
+//Use this string with a .env file and dotenv for real use
+//var mongoDB = 'mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.m0zwf.gcp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+
+//Only store username + password in plain text for the purposes of this coding challenge
+var mongoDB = 'mongodb+srv://TargetChallengeReviewer:3FSM82RY6zAYkcb@cluster0.m0zwf.gcp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true}).then(() => console.log('MongoDB connected...')).catch(err => console.log(err));
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error: '));
 
