@@ -5,9 +5,10 @@ var Schema = mongoose.Schema;
 
 var ProductSchema = new Schema(
     {
+        //TODO: Int32 is not allowed here
         tcin: {type: Int32, required: true },
         price: {
-            value: {type: Decimal128, required: false},
+            value: {type: Schema.Types.Decimal128, required: false},
             currency_code: {type: String, required: false}
         }
     }
