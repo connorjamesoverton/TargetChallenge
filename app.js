@@ -15,7 +15,7 @@ var mongoose = require('mongoose');
 //var mongoDB = 'mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.m0zwf.gcp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 //Only store username + password in plain text for the purposes of this coding challenge
-var mongoDB = 'mongodb+srv://TargetChallengeReviewer:3FSM82RY6zAYkcb@cluster0.m0zwf.gcp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+var mongoDB = 'mongodb+srv://DevUser_Connor:Winter123@cluster0.m0zwf.gcp.mongodb.net/TargetChallenge?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true}).then(() => console.log('MongoDB connected...')).catch(err => console.log(err));
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error: '));
@@ -36,7 +36,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+//app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
